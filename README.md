@@ -4,7 +4,11 @@
 
 using namespace std;
 
-Name::Name() { } ///Constructor base
+///Constructor base
+Name::Name() {
+    last = "NULL";
+    first = "NULL";
+}
 
 Name::Name(const Name&n) : last (n.last), first(n.first) { } ///Constructor copia
 
