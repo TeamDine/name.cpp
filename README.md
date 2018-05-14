@@ -34,18 +34,30 @@ bool Name::isName(Name& myName){
     int tam = 0;
     bool flag = true;
     string aux;
-    
+
     ///Extrae los nombres en una auxiliar
     aux = myName.getFirst();
     aux += myName.getLast();
 
     tam = aux.size();   ///Checa tamaño de la auxiliar
-    
+
     ///Checa si un caracter no coincide con el alfabeto
     for(int i = 0; i < tam; i++){
         ///Si no coincide, la cadena es inválida
         if(!isalpha(aux[i])){
             flag = false;
+        }
+    }
+
+    ///si es un nombre válido lo actualiza a mayusculas
+    if(flag){
+        tam = last.size();
+        for(int i = 0; i < tam; i++){
+            last[i] = toupper(last[i]);
+        }
+        tam = first.size();
+        for(int i = 0; i < tam; i++){
+            first[i] = toupper(first[i]);
         }
     }
 
