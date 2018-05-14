@@ -49,7 +49,8 @@ bool Name::isName(Name& myName){
     for(int i = 0; i < tam; i++){
         ///Si no coincide, la cadena es inválida
         if(!isalpha(aux[i])){
-            flag = false;
+            if(aux[i] != 32)    ///Caracter espacio en ASCII
+                flag = false;
         }
     }
 
